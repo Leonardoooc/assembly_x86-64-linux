@@ -10,7 +10,7 @@ _start:
 getInput:
   mov rax, 0x00
   mov rdi, 0x00
-  mov rsi, inputData
+  lea rsi, [inputData]
   mov rdx, 16
   syscall
   ret
@@ -18,7 +18,7 @@ getInput:
 printPostInput:
   mov rax, 0x01
   mov rdi, 0x01
-  lea rsi, postInputData
+  lea rsi, [postInputData]
   mov rdx, 10
   syscall
   ret
@@ -26,7 +26,7 @@ printPostInput:
 printInput:
   mov rax, 0x01
   mov rdi, 0x01
-  mov rsi, inputData
+  lea rsi, [inputData]
   mov rdx, 16
   syscall
   ret
